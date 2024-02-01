@@ -1,0 +1,27 @@
+@if(vehicle()){
+<div class="card">
+  <div class="card-header">
+    {{ pageTitle() }}
+  </div>
+
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-3">Name:</div>
+      <div class="col-md-6">{{ vehicle()?.name }}</div>
+      <div class="col-md-3">
+        <button class="btn btn-primary" (click)="addToCart(vehicle())">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">Price :</div>
+      <div class="col-md-6">
+        {{ vehicle()?.cost_in_credits | number : "1.2-2" }}
+      </div>
+    </div>
+  </div>
+</div>
+} @else {
+<p>No vehicles available</p>
+}

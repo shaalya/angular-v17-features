@@ -1,0 +1,41 @@
+<!-- Deferrable views  -->
+
+<div>
+  <div class="logo-wrapper text-center">
+    <img
+      class="logo"
+      src="./assets/angular-logo.svg"
+      alt="Angular logo"
+      priority
+    />
+  </div>
+  <div class="text-center" style="margin: 10px">
+    <!-- <h2 #trigger>Defarrable views</h2> -->
+    <button
+      aria-label="Show Additional Info"
+      class="adev-primary-btn"
+      text="Show Additional Info"
+      (click)="showAdditionalInfo()"
+    >
+      Show Additional Info
+    </button>
+    
+    @defer(when showInfo;on timer(2000ms)) { 
+    <sw-footer-component />
+    } @placeholder() {
+    <p>Placeholder for footer component</p>
+    } @loading (after 100ms; minimum 1s){
+    <p>Loading...</p>
+    } @error { Failed to load the dynamic content}
+
+    <!-- @defer (on idle) { -->
+    <!-- @defer (on timer(5000)) { -->
+    <!-- @defer (on viewport(trigger) ; when showInfo) { -->
+    <!-- @defer (on hover) { -->
+    <!-- @defer (on immediate) { -->
+    <!-- @defer(on interaction(trigger)){ -->
+    <!-- @defer (prefetch on immediate; prefetch when showInfo) { -->
+    <!-- @defer (when showInfo; prefetch on idle) { -->
+    <!-- @defer(when showInfo;on timer(2000ms)) {  -->
+  </div>
+</div>
